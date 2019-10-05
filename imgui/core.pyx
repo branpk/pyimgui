@@ -1155,6 +1155,7 @@ cdef class _IO(object):
 
     cdef cimgui.ImGuiIO* _ptr
     cdef object _fonts
+    cdef bytes _ini_filename
 
     def __init__(self):
         self._ptr = &cimgui.GetIO()
@@ -1191,7 +1192,8 @@ cdef class _IO(object):
 
     @ini_filename.setter
     def ini_filename(self, str value):
-        self._ptr.IniFilename = _bytes(value)
+        self._ini_filename = _bytes(value)
+        self._ptr.IniFilename = self._ini_filename
 
     @property
     def log_file_name(self):
