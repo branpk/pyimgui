@@ -1188,12 +1188,19 @@ cdef class _IO(object):
 
     @property
     def ini_filename(self):
-        return _from_bytes(self._ptr.IniFilename)
+        if self._ptr.IniFilename == NULL:
+            return None
+        else:
+            return _from_bytes(self._ptr.IniFilename)
 
     @ini_filename.setter
     def ini_filename(self, str value):
-        self._ini_filename = _bytes(value)
-        self._ptr.IniFilename = self._ini_filename
+        if value is None:
+            self._ini_filename = None
+            self._ptr.IniFilename = NULL
+        else:
+            self._ini_filename = _bytes(value)
+            self._ptr.IniFilename = self._ini_filename
 
     @property
     def log_file_name(self):
