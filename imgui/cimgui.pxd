@@ -429,7 +429,7 @@ cdef extern from "imgui.h" namespace "ImGui":
             ImGuiSizeCallback custom_callback,
             void* custom_callback_data
     ) except +
-    void SetNextWindowContentSize(const ImVec2& size) except +  # ✗
+    void SetNextWindowContentSize(const ImVec2& size) except +  # ✓
     void SetNextWindowCollapsed(  # ✓
             bool collapsed,
             # note: optional

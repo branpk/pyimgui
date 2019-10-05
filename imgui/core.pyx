@@ -2204,6 +2204,10 @@ def set_next_window_size(
     cimgui.SetNextWindowSize(_cast_args_ImVec2(width, height), condition)
 
 
+def set_next_window_content_size(float width, float height):
+    cimgui.SetNextWindowContentSize(_cast_args_ImVec2(width, height))
+
+
 def is_window_collapsed():
     """Check if current window is collapsed.
 
