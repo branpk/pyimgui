@@ -1186,6 +1186,14 @@ cdef class _IO(object):
         self._ptr.IniSavingRate = value
 
     @property
+    def ini_filename(self):
+        return _from_bytes(self._ptr.IniFilename)
+
+    @ini_filename.setter
+    def ini_filename(self, str value):
+        self._ptr.IniFilename = _bytes(value)
+
+    @property
     def log_file_name(self):
         return self._ptr.LogFilename
 
