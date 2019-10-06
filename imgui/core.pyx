@@ -5701,6 +5701,22 @@ def get_time():
     return cimgui.GetTime()
 
 
+def get_key_index(int imgui_key):
+    return cimgui.GetKeyIndex(imgui_key)
+
+
+def is_key_down(int user_key_index):
+    return cimgui.IsKeyDown(user_key_index)
+
+
+def is_key_pressed(int user_key_index, bool repeat=True):
+    return cimgui.IsKeyPressed(user_key_index, repeat)
+
+
+def is_key_released(int user_key_index):
+    return cimgui.IsKeyReleased(user_key_index)
+
+
 def is_mouse_hovering_rect(
     float r_min_x, float r_min_y,
     float r_max_x, float r_max_y,
