@@ -6872,6 +6872,10 @@ def pop_id():
     cimgui.PopID()
 
 
+def get_id(str str_id):
+    return cimgui.GetID(_bytes(str_id))
+
+
 def get_frame_height_with_spacing():
     """~ FontSize + style.FramePadding.y * 2 + style.ItemSpacing.y (distance in pixels between 2 consecutive lines of framed widgets)
 
